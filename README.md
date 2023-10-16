@@ -44,8 +44,15 @@ This repository contains the code for a MERN (MongoDB, Express.js, React.js, Nod
 3. **Set Up Environment Variables:**
    Create a `.env` file in the `backend` directory and add the following variables:
    ```env
+   PORT = 8000
+   ORIGIN = http://localhost:3000
    MONGO_URI=<your-mongodb-connection-string>
    JWT_SECRET=<your-jwt-secret>
+   ```
+
+   Create a `.env` file in the `frontend` directory and add the following variables:
+   ```env
+   REACT_APP_BASE_URL=http://localhost:8000
    ```
 
 4. **Run the Application:**
