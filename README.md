@@ -26,7 +26,7 @@ This repository contains the code for a MERN (MongoDB, Express.js, React.js, Nod
 
 1. **Clone the Repository:**
    ```bash
-   git clone [<repository-url>](https://github.com/Rock0007/Authentication)
+   git clone <repository-url>
    cd mern-authentication-app
    ```
 
