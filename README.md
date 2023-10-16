@@ -81,8 +81,7 @@ This repository contains the code for a MERN (MongoDB, Express.js, React.js, Nod
 - **`/client`:** Contains frontend code (React.js components, styles).
 
 ## Author
-A S Kapil
-askapil072gmail.com
-[Your GitHub Profile]
+- A S Kapil
+- askapil07gmail.com
 
 Feel free to customize this README file further according to your project's specific requirements.
