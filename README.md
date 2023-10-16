@@ -77,12 +77,12 @@ This repository contains the code for a MERN (MongoDB, Express.js, React.js, Nod
 
 ## Folder Structure
 
-- **`/backend`:** Contains backend code (Node.js, Express.js, MongoDB models).
-- **`/frontend`:** Contains frontend code (React.js components, styles).
+- **`/server`:** Contains backend code (Node.js, Express.js, MongoDB models).
+- **`/client`:** Contains frontend code (React.js components, styles).
 
 ## Author
-[Your Name]
-[Your Email]
+A S Kapil
+askapil072gmail.com
 [Your GitHub Profile]
 
 Feel free to customize this README file further according to your project's specific requirements.
