@@ -17,6 +17,14 @@ const registerUser = async (req, res) => {
           "All fields (name, email, mobile, password, confirmPassword) are required.",
       });
     }
+    // Validate email format
+    const emailRegex = /^[^\s@]+@gmail\.com$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({
+        error:
+          "Invalid email address. Please provide a Gmail address ending with @gmail.com.",
+      });
+    }
     // Validate mobile number (should be a number)
     if (isNaN(mobile) || mobile.toString().length !== 10) {
       return res.status(400).json({
