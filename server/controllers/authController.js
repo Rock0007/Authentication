@@ -7,6 +7,7 @@ const test = async (req, res) => {
   res.json("test is working");
 };
 
+//RegisterUser
 const registerUser = async (req, res) => {
   try {
     const { name, email, mobile, password, confirmPassword } = req.body;
