@@ -72,13 +72,13 @@ const registerUser = async (req, res) => {
 };
 
 //Login Endpoint
+// Login Endpoint
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
     // Check if user exists
     const user = await User.findOne({ email });
     if (!user) {
-      // Return a 401 status code for unauthorized access
       return res.status(401).json({
         error: "Invalid credentials.",
       });
@@ -91,7 +91,14 @@ const loginUser = async (req, res) => {
         { email: user.email, id: user._id, name: user.name },
         process.env.JWT_SECRET
       );
-      res.cookie("token", token, { httpOnly: true }).json(user);
+
+      res
+        .cookie("token", token, {
+          httpOnly: true,
+          sameSite: "None",
+          secure: true,
+        })
+        .json(user);
     } else {
       return res.status(401).json({
         error: "Invalid credentials.",
@@ -109,8 +116,16 @@ const getProfile = async (req, res) => {
   const { token } = req.cookies;
   try {
     if (token) {
-      const user = jwt.verify(token, process.env.JWT_SECRET);
-      res.json(user);
+      const decodedUser = jwt.verify(token, process.env.JWT_SECRET);
+      const user = await User.findById(decodedUser.id);
+
+      if (user) {
+        return res.json(user);
+      } else {
+        return res.status(404).json({
+          error: "User not found.",
+        });
+      }
     } else {
       res.json(null);
     }
